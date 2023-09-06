@@ -9,17 +9,17 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *chameleon = list;
-	listint_t *lizard = list;
+        listint_t *chameleon = list;
+        listint_t *lizard = list;
 
-	if (!list)
-		return (0);
-	while (chameleon && lizard && lizard->next)
-	{
-		chameleon = chameleon->next;
-		lizard = lizard->next->next;
-		if (chameleon == lizard)
-			return (1);
-	}
-	return (0);
+        if (!list)
+                return (0);
+        while (chameleon && lizard && lizard->next)
+        {
+                chameleon = chameleon->next;
+                lizard = lizard->next->next;
+                if (chameleon == lizard)
+                        return (1);
+        }
+        return (0);
 }
