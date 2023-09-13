@@ -16,3 +16,7 @@ TASKS
 10. Best score
 11. Multiply by using map
 12. Roman to Integer
+13. Weighted average!
+14. Squared by using map
+15. Delete by value
+16. CPython #1: PyBytesObject
