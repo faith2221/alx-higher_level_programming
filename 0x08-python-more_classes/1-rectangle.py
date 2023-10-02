@@ -8,7 +8,7 @@ class Rectangle:
         """Initializes private instance attributes __width and __height."""
         self.__width = width
         self.__height = height
-    
+
     @property
     def width(self):
         """The getter method for retrieving the width attribute."""
