@@ -1,0 +1,57 @@
+Test cases for matrix_divided function
+
+
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+# Test when the matrix is not a list of lists
+>>> matrix_divided(5, 3)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Test when rows have differnt sizes
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5],
+... ]
+>>> matri_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have  the same size
+
+
+# Test when div is not a number
+>>> matrix = [
+...    [1, 2, 3],
+...    [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, "three")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+
+# Test when div is equal to 0
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: div by zero
+
+# Test with negative numbers
+>>> matrix = [
+...     [-1, -1, -3],
+...     [-4, -5, -6]
+... ]
+>>> matrix_divided(matrix, 2)
+[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]

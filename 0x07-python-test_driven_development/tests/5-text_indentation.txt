@@ -1,0 +1,53 @@
+Test cases for text_indentation function
+
+
+# Valid cases
+>>> text_indentation("Hello. How are you today?")
+Hello.$
+$
+How are you Today?$
+
+
+>>> text_indentation("This is a test: 1. First item. 2. Second item.")
+This is a test:$
+$
+1. First item.$
+$
+2. Second item.$
+
+
+#Empty input
+>>> text_indentation("")
+# No output, as the input is empty.
+
+
+#Input with multiple spaces
+>>> text_indentation("  This  is  a  test.   Multiple space.  ")
+This  is  a  test.$
+$
+Multiple spaces.$
+
+
+#Input with multiple new lines
+>>> text_indentation("New\n\nlines\n\n\nare\n\ngood!")
+New$
+$
+lines$
+$
+are$
+$
+good!
+
+
+# Invalid cases
+>>> try:
+...     text_indentation(123)
+... except TypeError as ex:
+...     print(ex.args[0])
+text must be a string
+
+>>> try:
+...     text_indentation(None)
+... except TypeError as ex:
+...     print(ex.args[0])
+text must be a string

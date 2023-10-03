@@ -1,0 +1,28 @@
+# Test cases for say_my_name function
+
+
+# Valid cases
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob
+
+
+# Invalid cases
+>>> try:
+...     print_square(12, "White")
+... except TypeError as ex:
+...     print(ex.args[0])
+first_name must be a string or last_name  must be a string
+>>> try:
+...     print_square(None)
+... except TypeError as ex:
+...     print(ex.args[0])
+first_name must be a string or last_name  must be a string
+>>> try:
+...     print_square("John", 12)
+... except TypeError as ex:
+...     print(ex.args[0])
+first_name must be a string or last_name  must be a string
