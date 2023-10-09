@@ -14,4 +14,4 @@ class MyInt(int):
 
     def __ne__(self, other):
         """Overrides the inequality (!=) operator to invert its behaviour."""
-        return auper().__eq__(other)
+        return super().__eq__(other)
