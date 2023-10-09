@@ -2,8 +2,8 @@
 """Defines the add_attribute."""
 
 
-def add_attribute(obj, attr_name, attr_value):
+def add_attribute(obj, att, value):
     """Checks if it's possible to add a new attribute to the object."""
-    if hasattr(obj, '__dict__') and not hasattr(obj, '__slots__'):
-        raise TypeError(f"can't add new attribute to {type(obj).__name__}")
-    setattr(obj, attr_name, attr_value)
+    if not hasattr(obj, '__dict__'):
+        raise TypeError("can't add new attribute")
+    setattr(obj, att, value)
