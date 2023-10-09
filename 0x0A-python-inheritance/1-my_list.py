@@ -3,9 +3,10 @@
 
 
 class MyList(list):
+    """Implements MyList that prints a sorted list."""
     def append(self, value):
         """Overrides the append method to sort the list after each append."""
-        supper().append(value)
+        super().append(value)
         self.sort()
 
     def print_sorted(self):
