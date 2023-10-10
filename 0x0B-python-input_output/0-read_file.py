@@ -3,9 +3,6 @@
 
 
 def read_file(filename=""):
-    """
-    param filename: The name of the file to read (default is an empty string)
-    """
-    try:
-        with open(filename, encoding='utf-8') as f:
-            print(f.read(), end="")
+    """Returns the text file to stdout."""
+    with open(filename, encoding='utf-8') as f:
+        print(f.read(), end="")
