@@ -6,7 +6,7 @@ class BaseGeometry:
     """Implements the BaseGeometry."""
     def area(self):
         """Raises an Exception with a custom error message."""
-        raise Exception("area() is not implemented")
+        raise NotImplementedError("Subclasses must implement the area method")
 
     def integer_validator(self, name, value):
         """Checks if the value is an integer."""
