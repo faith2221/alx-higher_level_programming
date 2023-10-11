@@ -23,16 +23,31 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
+            if count == 10:
+                print_stats(size, status_codes)
+                count 1
+
+            else:
+                count += 1
+
             line = line.split()
 
             try:
-                status_code = int(line[-2])
-                if status_code in valid_codes:
-                    status_codes[status_codes] = status_codes.get
-                    (status_code, 0) + 1
                 size += int(line[-1])
-            except (ValueError, IndexError)
-            pass
+            except(ValueError, IndexError):
+                pass
+
+            try:
+                if line[-2] in valid_codes:
+                    if status_codes.get(line[-2], -1) == -1:
+                        status_codes[line[-2]] = 1
+                    else:
+                        status_codes[line[-2]] += 1
+            except IndexError:
+                pass
+
+        print_stats(size, status_codes)
+
     except KeyboardInterrupt:
-        pass
-    print_stats(size, status_codes)
+        print_stats(size, status_codes)
+        raise
