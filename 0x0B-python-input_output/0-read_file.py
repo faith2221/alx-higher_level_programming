@@ -1,4 +1,4 @@
-#!/usr/bin/pyhon3
+#!/usr/bin/python3
 """Defines a function that reads a text file and prints to stdout."""
 
 
