@@ -9,7 +9,7 @@ import MySQLdb as db
 from sys import argv
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     """
     Accesses database and gets the states from the database.
     """
