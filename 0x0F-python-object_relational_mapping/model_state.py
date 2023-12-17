@@ -5,13 +5,13 @@ to work with MySQLAlchemy ORM.
 """
 
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declaarative_base
+from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
 class Sate(Base):
-    """Sate class
+    """State class
 
     Attributes:
         __tablename (str): The table name of class
