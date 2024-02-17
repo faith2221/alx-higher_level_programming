@@ -3,34 +3,32 @@
 Script that takes in the name of a state as an argument
 and lists all cities of that state, using the database hbtn_0e_4_usa
 """
+import MySQLdb
+import sys
 
 
-import MySQLdb as db
-from sys import argv
+def lists_cities():
+    """Gives access to db and get the cities from db."""
+    username = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_name = sys.argv[4]
+    db = MySQLdb.connect(host='localhost',
+                         port=3306,
+                         user=username,
+                         passwd=password,
+                         db=db_name)
+    cmdquery = 'SELECT cities.name FROM \
+        cities INNER JOIN states ON states.id=cities.state_id \
+        WHERE states.name=%s'
+    cursor = db.cursor()
+    cursor.execute(cmdquery, (state_name,))
+    rows = cursor.fetchall()
+    temp = list(row[0] for row in rows)
+    print(*temp, sep=", ")
+    cursor.close()
+    db.close()
 
-if __name__ == '__main__':
-    """
-    Accesses database and get the cities from database.
-    """
-    db_connect = db.connect(host="localhost", port=3306,
-                            user=argv[1], passwd=argv[2], db=argv[1])
-    with db_connect.cursor() as db_cursor:
-        db_cursor.execute("""
-            SELECT
-                cities.id, cities.name
-            FROM
-                cities
-            JOIN
-                states
-            ON
-                cities.state_id = states.id
-            WHERE
-                states.name LIKE BINARY %(state_name)s
-            ORDER BY
-                cities.id ASC
-        """, {
-            'state_name': argv[4]
-        })
-        rows_selected = db_cursor.fetchall()
-    if rows_selected is not None:
-        print(", ".join([row[1] for row in rows_selected]))
+
+if __name__ == "__main__":
+    lists_cities()
