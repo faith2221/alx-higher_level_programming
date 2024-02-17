@@ -18,7 +18,7 @@ def find_peak(list_of_integers):
             if mid_nm // 2 == 0:
                 mid_nm = 2
             mid = mid + mid_nm // 2
-        elif mid_nm > 0 and list_of_integers[mid] < list_of _integers[mid - 1]:
+        elif mid_nm > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
             if mid_nm // 2 == 0:
                 mid_nm = 2
             mid = mid - mid_nm // 2
