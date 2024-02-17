@@ -1,4 +1,4 @@
-#!/usr/bin/python3i
+#!/usr/bin/python3
 """Takes a URL, sends request to the URL and displays value the request"""
 import sys
 import urllib.request
